@@ -24,4 +24,7 @@ service BookAuthorService {
 
   //unary - client sends one request and server responds with a response
   rpc getAuthor(Author) returns (Author){};
+
+  // asynchronous server streaming - client sends one request and server responds with stream of messages
+  rpc getBooksByAuthor(Author) returns (stream Book) {};
 }
