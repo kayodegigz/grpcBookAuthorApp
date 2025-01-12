@@ -27,4 +27,11 @@ service BookAuthorService {
 
   // asynchronous server streaming - client sends one request and server responds with stream of messages
   rpc getBooksByAuthor(Author) returns (stream Book) {};
+
+
+  // asynchronous client streaming - client sends a stream of messages server sends one response
+  rpc getExpensiveBook(stream Book) returns (Book) {};
+
+  // asynchronous bidirectional streaming - client sends a stream of messages, server sends a stream of responses
+  rpc getBooksByAuthorGender(stream Book) returns (stream Book) {};
 }
